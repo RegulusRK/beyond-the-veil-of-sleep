@@ -1,6 +1,6 @@
 import msvcrt
 
-def initial_screen ():
+def init_screen ():
     print('=======================================')
     print('       Beyond the Veil of Sleep')
     print('=======================================\n')
@@ -11,11 +11,9 @@ def initial_screen ():
 
     while True:
         if option == '1':
-            print('iniciar')
-            break
+            return 1
         elif option == '2':
-            print('exit')
-            break
+            return 0
         else:
             i = 1
             while i <= 3:
@@ -24,11 +22,9 @@ def initial_screen ():
                 print('2- Exit')
                 option = msvcrt.getch().decode().lower()
                 if(option == '1'):
-                    print('iniciar')
-                    break
+                    return 1
                 elif(option == '2'):
-                    print('exit')
-                    break
+                    return 0
                 else:
                     print('\n' * 130)
                     print(f'Invalid option.','(',i,'/ 3 )')
@@ -37,9 +33,3 @@ def initial_screen ():
                         print('Too many invalid attempts.')
                         print('Closing...')
         break
-
-def main():
-    initial_screen()
-
-if __name__ == "__main__":
-    main()
